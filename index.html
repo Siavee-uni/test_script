@@ -62,34 +62,34 @@
   <script>
 
 function myFunction() {
-
-      //gib mir die aktuelle Zeit an.
-      var today = new Date();
-      var hours = today.getHours();
-      var minutes = today.getMinutes();
-      var seconds = today.getSeconds();
-
-      // gibt mir die aktuelle Zeit in seckunden
-      var time_sec = (hours*60)*60 + minutes*60 + seconds;
-      var time_h = time_sec/60/60;
-
+     
       // varbialen aus der datenbank.
-      var timestart_h = "18:00:00"; 
-      var timeend_h = "19:00:00"; 
+      var date = "2020-03-01"
 
-      // test alert um zu schauen ob die uhrzeit soweit stimmt.
-      alert("sekunden " + time_sec + " = " + time_h + " stunden");
+      const ts = date + " 21:00:00"; 
+      const startDate = new Date(ts);
 
-      // start vom eigentlichen script
-      var time = timeend - time_sec;
+      const te = date + " 22:00:00"; 
+      const endDate = new Date(te);
 
-      if (time_sec >= timestarts && time_sec < timeends) {
+      var nowDate = new Date();
+
+      // gib alle daten aus zum testen
+      alert("start datum = " + startDate + " end datum = " + endDate + "time now =" + nowDate);
+      
+      // übrige Zeit zum schauen des videos
+      var date_diff = endDate - nowDate;
+
+    
+      // schaue ob aktuelle zeit im timslot liegt
+      if (nowDate >= startDate && nowDate < endDate) {
           var close = function() {
               $("#2").modal("hide");
           }
+          alert(""+ date_diff + " bis zum schließen");
           document.getElementById("datapic").addAttribute("data-toggle");
-          alert(time + "seconds til closing modal");
-          setTimeout(close, time); // closing the modal in calculated time
+          //alert(""+ date_diff + "bis zum schließen"); geh nicht nach document.get?
+          setTimeout(close, date_diff); // closing the modal in calculated time
 
       } else {
 
@@ -97,7 +97,6 @@ function myFunction() {
           document.getElementById("datapic").removeAttribute("data-toggle");
           alert("opens in " + timestarts + " seconds");
       }
-     
     }
     
   </script>
