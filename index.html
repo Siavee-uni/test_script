@@ -69,7 +69,7 @@ function myFunction() {
       const ts = date + " 21:00:00"; 
       const startDate = new Date(ts);
 
-      const te = date + " 22:00:00"; 
+      const te = date + " 22:05:00"; 
       const endDate = new Date(te);
 
       var nowDate = new Date();
@@ -87,9 +87,9 @@ function myFunction() {
               $("#2").modal("hide");
           }
           alert(""+ date_diff + " bis zum schließen");
+          setTimeout(close, date_diff);
           document.getElementById("datapic").addAttribute("data-toggle");
-          //alert(""+ date_diff + "bis zum schließen"); geh nicht nach document.get?
-          setTimeout(close, date_diff); // closing the modal in calculated time
+         
 
       } else {
 
