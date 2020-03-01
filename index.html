@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div class="container text-center">
+    <h4>Test</h4>
+    <!-- Modal Picture-->
+    <a><img onclick="myFunction()" id="datapic" class="z-depth-1 img-thumbnail"
+        src="https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-260nw-407021107.jpg"
+        alt="video" data-toggle="modal" data-target="#2" /></a>
+
+
+
+
+
+    <div class="modal fade" id="2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <!-- modal-dialog ist für die größe zuständig/styling-->
+
+        <!--Content-->
+        <div class="modal-content">
+          <!--Body-->
+          <div class="" style="">
+            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/XREIjNWGGtg"
+                allowfullscreen></iframe>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+              <h4 id="test" class="mr-4">test</h4>
+              <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script>
+
+function myFunction() {
+
+      //gib mir die aktuelle Zeit an.
+      var today = new Date();
+      var hours = today.getHours();
+      var minutes = today.getMinutes();
+      var seconds = today.getSeconds();
+
+      // gibt mir die aktuelle Zeit in seckunden
+      var time_sec = (hours*60)*60 + minutes*60 + seconds;
+      var time_h = time_sec/60/60;
+
+      // varbialen aus der datenbank.
+      var timestart_h = "18:00:00"; 
+      var timeend_h = "19:00:00"; 
+
+      // test alert um zu schauen ob die uhrzeit soweit stimmt.
+      alert("sekunden " + time_sec + " = " + time_h + " stunden");
+
+      // start vom eigentlichen script
+      var time = timeend - time_sec;
+
+      if (time_sec >= timestarts && time_sec < timeends) {
+          var close = function() {
+              $("#2").modal("hide");
+          }
+          document.getElementById("datapic").addAttribute("data-toggle");
+          alert(time + "seconds til closing modal");
+          setTimeout(close, time); // closing the modal in calculated time
+
+      } else {
+
+
+          document.getElementById("datapic").removeAttribute("data-toggle");
+          alert("opens in " + timestarts + " seconds");
+      }
+     
+    }
+    
+  </script>
+
+</body>
+
+</html>
