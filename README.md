@@ -1,4 +1,4 @@
-'''
+´´´
 <?php
   $timenow = date('H:m:s');
  
@@ -65,10 +65,10 @@
            }
       };
 </script>
-'''
+´´´
 
 Funktioniereder code 
-'''
+´´´
 <script>  
 function msToTime(s) {
          if (s > 0) {
@@ -113,4 +113,4 @@ function msToTime(s) {
            }
       };
 </script>
-'''
+´´´
