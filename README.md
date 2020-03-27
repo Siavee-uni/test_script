@@ -1,4 +1,13 @@
-´´´
+Fehlder Meldung 
+```
+Uncaught ReferenceError: timer is not defined
+    at HTMLImageElement.onclick (posts:126)
+```
+Was dieser teil ist
+```
+<a><img style="width:100%" onclick="timer({{ $post->id }}, '{{ $timefrom }}', '{{ $timeto }}', '{{ $timenow }}')" id="{{$post->id}}"class="z-depth-1 img-thumbnail" src="/uploads/{{$post->image}}" alt="video" data-toggle="modal" data-target="#modal-{{$post->id}}"></a>
+```
+```
 <?php
   $timenow = date('H:m:s');
  
@@ -65,10 +74,10 @@
            }
       };
 </script>
-´´´
+```
 
 Funktioniereder code 
-´´´
+```
 <script>  
 function msToTime(s) {
          if (s > 0) {
@@ -113,4 +122,4 @@ function msToTime(s) {
            }
       };
 </script>
-´´´
+```
